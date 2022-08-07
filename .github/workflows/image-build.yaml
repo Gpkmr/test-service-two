@@ -16,7 +16,7 @@ jobs:
         uses: docker/metadata-action@v4
         with:
           #images: ${{ secrets.GAR_HOST }}/${{ secrets.GCP_PROJECT }}/${{ secrets.GAR_REPO }}/srvtwo
-          images: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/project-dev/srvtwo
+          images: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.us-east-1.amazonaws.com/srvtwo
           tags: |
             type=sha
           flavor: |
