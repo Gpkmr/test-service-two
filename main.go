@@ -10,6 +10,7 @@ import (
 func main() {
 	fmt.Println("Starting server...")
 	http.HandleFunc("/two", SrvTwo)
+	http.HandleFunc("/health", Health)
 
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -26,5 +27,11 @@ func main() {
 func SrvTwo(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		fmt.Fprintf(w, "Welcome to service two !\n")
+	}
+}
+
+func Health(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		fmt.Fprintf(w, "Service two is running !\n")
 	}
 }
